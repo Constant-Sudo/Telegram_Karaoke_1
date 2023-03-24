@@ -8,3 +8,4 @@ paused = False
 disabled = False
 BOT_LINK = "https://t.me/this_karaoke_bot"
 changed = True
+MAX_FILESIZE = "50m"     # Ex: input 50m for 50MB or 50.3k -> 50.3 KB

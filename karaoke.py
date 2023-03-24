@@ -12,6 +12,7 @@ import contextlib
 from io import BytesIO
 from pathlib import Path
 from subprocess import check_output
+from constants import MAX_FILESIZE
 
 import pygame
 import qrcode
@@ -451,7 +452,7 @@ class Karaoke:
             if self.high_quality
             else "mp4"
         )
-        cmd = [self.youtubedl_path, "-f", file_quality, "-o", dl_path, video_url]
+        cmd = [self.youtubedl_path, "--max-filesize", MAX_FILESIZE  , "-f", file_quality, "-o", dl_path, video_url]
         logging.debug("Youtube-dl command: " + " ".join(cmd))
         rc = subprocess.call(cmd)
         if rc != 0:

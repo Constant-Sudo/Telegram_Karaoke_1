@@ -10,8 +10,7 @@ from unidecode import unidecode
 import logging
 import constants
 import startkaraoke as sk
-import threading 
-import json
+import threading
 
 from telegram import __version__ as TG_VER
 
@@ -54,7 +53,6 @@ FIVE, SIX, SEVEN, EIGHT, NINE, TEN = range(6)
 
 constants.paused = False
 constants.disabled = False
-
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
@@ -470,7 +468,7 @@ async def seven(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
     query = update.callback_query
 
     await query.answer()
-    
+ 
     if len(sk.k.queue) >= 1:
 
         songs = ""
